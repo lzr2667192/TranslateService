@@ -1,6 +1,11 @@
 Description
 ===========
-TranslateService is based on [YouDao Translation API][1]. Showing you how to use an existing service to build your app.
+TranslateService is based on [YouDao Translation API][1]. Showing you how to use an existing service to build your app.<br/>
+In this demo I will lead you:
+* How to use AIDL to build remote service
+* How to use Android Service, control the life cycle of a service
+* And more...
+
 Tutorial
 --------
 Simply you need to follow these steps:
