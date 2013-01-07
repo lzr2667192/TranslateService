@@ -3,8 +3,6 @@ Description
 TranslateService is based on [YouDao Translation API][1]. Showing you how to use an existing service to build your app.
 Tutorial
 --------
-!important: Replace the Key in my project with your own key.(com.iedgeco.ryan.translate.config.StaticDef.java)
---------------------------------------------------------------------------------------------------------------
 Simply you need to follow these steps:
 Step 1
 ------
@@ -13,7 +11,7 @@ Step 2
 ------
 Remember the API Key & keyfrom, put it in any file you like as Constants.
 ```java
-String KEY_FOR_TRANSLATE = "13******68";
+String KEY_FOR_TRANSLATE = "13******68";//replace with your own key
 String KEY_FROM = "TranslateHelper";
 ```
 Step 3
