@@ -3,6 +3,8 @@ Description
 TranslateService is based on [YouDao Translation API][1]. Showing you how to use an existing service to build your app.
 Tutorial
 --------
+!important: Replace the Key in my project with your own key.(com.iedgeco.ryan.translate.config.StaticDef.java)
+--------------------------------------------------------------------------------------------------------------
 Simply you need to follow these steps:
 Step 1
 ------
