@@ -12,7 +12,7 @@ Step 2
 Remember the API Key & keyfrom, put it in any file you like as Constants.
 ```java
 String KEY_FOR_TRANSLATE = "13******68";//replace with your own key
-String KEY_FROM = "TranslateHelper";
+String KEY_FROM = "TranslateHelper";	//replace with your own keyfrom
 ```
 Step 3
 ------
