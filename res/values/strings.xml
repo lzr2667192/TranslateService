@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TranslateService</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">TranslateService</string>
+
+    <!-- activity_main.xml -->
+    <string name="hint_input">原文</string>
+    <string name="hint_translated">译文</string>
+    <string name="prompt">Choose a language</string>
+    <string name="translate">> translate ></string>
+	<string name="on_click">onClick</string>
+	<string name="rights">Powered by YouDao</string>
+    <!-- arrays -->
+    <string-array name="languages">
+        <item>Chinese</item>
+        <item>English</item>
+    </string-array>
+    <string-array name="language_values">
+        <item>zh</item>
+        <item>en</item>
+    </string-array>
+
+</resources>
