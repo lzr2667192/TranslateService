@@ -6,7 +6,7 @@ Tutorial
 Simply you need to follow these steps:
 Step 1
 ------
-[Apply a Key for you app.][2]
+[Apply a Key for you app on the website.][2]
 Step 2
 ------
 Remember the API Key & keyfrom, put it in any file you like as Constants.
@@ -16,7 +16,7 @@ String KEY_FROM = "TranslateHelper";
 ```
 Step 3
 ------
-Try to read the documentation and use it in you app.
+Try to read the documentation and use it properly in you app.
 ```text
 数据接口
 http://fanyi.youdao.com/openapi.do?keyfrom=<keyfrom>&key=<key>&type=data&doctype=<doctype>&version=1.1&q=要翻译的文本

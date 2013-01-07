@@ -8,6 +8,7 @@ import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
+import android.os.Message;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -27,11 +28,32 @@ public class MainActivity extends Activity {
 	private Spinner spFrom, spTo;
 	private Button btTranslate;
 	
+	private static final int TRANSLATE_COMPLETED = 0;
+	private static final int TRANSLATE_ERROR = 1;
+	
+	
 	//data
 	private String[] langShortNames;
 	
 	//controller
-	private Handler mHandler = new Handler();
+	private Handler mHandler = new Handler(){
+		@Override
+		public void handleMessage(Message msg) {
+			switch (msg.what) {
+			case TRANSLATE_COMPLETED:
+				String result = (String) msg.obj;
+				etTranslation.setText(result);
+				etInput.selectAll();
+				break;
+			case TRANSLATE_ERROR:
+				Log.e(TAG, "translation error");
+				break;
+			default:
+				break;
+			}
+		}
+		
+	};
 	
 	//service
 	private ITranslate mTranslateService;
@@ -56,29 +78,30 @@ public class MainActivity extends Activity {
 		}
 	};
 	
+	//launch a thread for translation
 	private void doTranslate(){
-		mHandler.post(new Runnable() {
+		new Thread(new Runnable() {
 			@Override
 			public void run() {
 				String result = null;
 				try {
-					int fromPosition = spFrom.getSelectedItemPosition();
-					int toPosition = spTo.getSelectedItemPosition();
 					String input = etInput.getText().toString();
-					if(input.length() > 5000)
-						input = input.substring(0, 5000);
-					Log.v(TAG, "Translate from " + langShortNames[fromPosition]
-							+ " to " + langShortNames[toPosition]);
+					//use the translate service
 					result = mTranslateService.traslate(input);
-					if(result == null)
+					//send message callback
+					Message msg = new Message();
+					msg.obj = result;
+					if(result == null){
+						msg.what = TRANSLATE_ERROR;
 						throw new Exception("Failed to get a translation...");
-					etTranslation.setText(result);
-					etInput.selectAll();
+					}
+					msg.what = TRANSLATE_COMPLETED;
+					mHandler.sendMessage(msg);
 				} catch (Exception e) {
 					Log.e(TAG, "Error happened while translating...", e);
 				}
 			}
-		});
+		}).start();
 	}
 	
 	private void doBindService(){
@@ -136,12 +159,6 @@ public class MainActivity extends Activity {
         
         //bind translate service
         doBindService();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_main, menu);
-        return true;
     }
     
     @Override
