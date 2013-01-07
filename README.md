@@ -90,6 +90,9 @@ show({
     ]
 });
 ```
+Step 4
+------
+Use it to build your translate module. AIDL and implemention.
 
 [1]: http://fanyi.youdao.com/openapi
 [2]: http://fanyi.youdao.com/openapi?path=data-mode
