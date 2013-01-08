@@ -7,7 +7,7 @@ In this demo I will lead you:
 * And more...
 
 Tutorial
---------
+========
 Simply you need to follow these steps:
 Step 1
 ------
@@ -92,7 +92,7 @@ show({
 ```
 Step 4
 ------
-Use it to build your translate module. AIDL and implemention. To see the details on [my blog][3].
+Use it to build your translation module. AIDL and implemention etc... To see the details on [my blog][3].
 
 [1]: http://fanyi.youdao.com/openapi
 [2]: http://fanyi.youdao.com/openapi?path=data-mode
